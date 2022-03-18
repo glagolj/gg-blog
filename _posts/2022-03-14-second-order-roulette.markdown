@@ -134,7 +134,7 @@ but the difference is mostly along-the-track, and by less in orthogonal directio
 And closer we are to the outer lobes, the less of a difference there is.
 
 
-<a href="/images/fig_1-096_080_040_032-join-large.png"><img src="/images/fig_1-096_080_040_032-join-small.png" alt="Fig.1 comparison of 3 different approximations"></a>
+<a href="../../../../images/fig_1-096_080_040_032-join-large.png"><img src="../../../../images/fig_1-096_080_040_032-join-small.png" alt="Fig.1 comparison of 3 different approximations"></a>
 
 
 For the plot examples shown here I add a small circle on top of (Eq.2) to mimic the effect of the pen motion within the hole. 
@@ -161,10 +161,10 @@ I think that this is a question of whether the pen-holes in gears align with the
 as wild gears come in both versions.
 
 
-<a href="/images/fig_2-120_096_040_032-large.png"><img src="/images/fig_2-120_096_040_032-small.png" alt="Fig.2"></a>
+<a href="../../../../images/fig_2-120_096_040_032-large.png"><img src="../../../../images/fig_2-120_096_040_032-small.png" alt="Fig.2"></a>
 
 
-<a href="/images/fig_3-140_135_060_024-large.jpg"><img src="/images/fig_3-140_135_060_024-small.jpg" alt="Fig.3"></a>
+<a href="../../../../images/fig_3-140_135_060_024-large.jpg"><img src="../../../../images/fig_3-140_135_060_024-small.jpg" alt="Fig.3"></a>
 
 
 
@@ -181,7 +181,7 @@ Another simplification is obtained when we use a centered pen-hole in ring $$n_3
 Frequency is $$f_0=120/96=5/4$$, thus we have 5 simple lobes.
 
 
-<a href="/images/fig_4-120_096_040_026-large.png"><img src="/images/fig_4-120_096_040_026-small.png" alt="Fig.4"></a>
+<a href="../../../../images/fig_4-120_096_040_026-large.png"><img src="../../../../images/fig_4-120_096_040_026-small.png" alt="Fig.4"></a>
 
 
 ## 4 General case
@@ -277,13 +277,13 @@ I didn't work out comparison to [Alyx Brett][alyx-brett] results, but I think th
 Plugging actual numbers for typical wild gear elements we mostly get low symmetry, or none at all ($$n_{\rm symm}=1$$).
 Here are two  nice curves with higher rotational symmetry:
 
-<a href="/images/fig_5-140_128_054_045-144_126_056_024-large.png"><img src="/images/fig_5-140_128_054_045-144_126_056_024-small.png" alt="Fig.5"></a>
+<a href="../../../../images/fig_5-140_128_054_045-144_126_056_024-large.png"><img src="../../../../images/fig_5-140_128_054_045-144_126_056_024-small.png" alt="Fig.5"></a>
 
 
 But there is also a fun category of curves that on the first glance look like they posses rotational symmetry, but not really at details level as $$n_{\rm symm}=1$$.
 
 
-<a href="/images/fig_6-112_104_046_028-135_126_056_045-large.png"><img src="/images/fig_6-112_104_046_028-135_126_056_045-small.png" alt="Fig.6"></a>
+<a href="../../../../images/fig_6-112_104_046_028-135_126_056_045-large.png"><img src="../../../../images/fig_6-112_104_046_028-135_126_056_045-small.png" alt="Fig.6"></a>
 
 
 
@@ -303,7 +303,7 @@ This also means that $$\varphi_p=0$$ and $$\varphi_p=\pi$$ can produce the same 
 Eq.8 is also useful as it suggest $$k=1/2$$ as a choice for curves that have most slant and visual deviation from reflection symmetry. In Fig.7 we show $$k=0$$, $$1/2$$ and $$1$$. Fig.7b is  slanted and doesn't have reflection symmetry.
 
 
-<a href="/images/fig_7-126_108_045_015-large.png"><img src="/images/fig_7-126_108_045_015-small.png" alt="Fig.7"></a>
+<a href="../../../../images/fig_7-126_108_045_015-large.png"><img src="../../../../images/fig_7-126_108_045_015-small.png" alt="Fig.7"></a>
 
 
 ## 7 Simple numerical example
@@ -342,7 +342,7 @@ Example 2: Previous example looks interesting. Lets try something similar: $$F=(
 Fig.8 shows our two examples. It also demonstrates that number of teeth need not be very large.
 
 
-<a href="/images/fig_8-056_049_024_016-072_045_024_016-large.png"><img src="/images/fig_8-056_049_024_016-072_045_024_016-small.png" alt="Fig.8"></a>
+<a href="../../../../images/fig_8-056_049_024_016-072_045_024_016-large.png"><img src="../../../../images/fig_8-056_049_024_016-072_045_024_016-small.png" alt="Fig.8"></a>
 
 
 ## 9 Gallery of curves and online plotter
@@ -397,7 +397,7 @@ $$
 Task is again to bring fractions to a common denominator $$T$$. And again the number of rotation symmetries $$n_{\rm symm}$$ is gcd of resulting numerators. Here are two examples:
 
 
-<a href="/images/fig_9-200_160_120_060_024_012-176_160_120_080_054_027-large.png"><img src="/images/fig_9-200_160_120_060_024_012-176_160_120_080_054_027-small.png" alt="Fig.9"></a>
+<a href="../../../../images/fig_9-200_160_120_060_024_012-176_160_120_080_054_027-large.png"><img src="../../../../images/fig_9-200_160_120_060_024_012-176_160_120_080_054_027-small.png" alt="Fig.9"></a>
 
 
 Let us work out numbers for Fig.9a: from (200:160;120:60;24:12) we have $$f_0=200/160=5/4$$, $$f_1=200*120/(160*60)=5/2$$ and $$f_2=200*120*24/(160*60*12)=5$$. These 3 fractions we have to bring to the same denominator: $$F=(5/4,10/4,20/4)$$. We read $$T=4$$ and $$T_5=20$$, while symmetry $$n_{\rm symm}={\gcd}(5,10,20)=5$$, i.e. very light figure with 5-fold rotational symmetry.
