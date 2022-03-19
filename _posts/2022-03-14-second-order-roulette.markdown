@@ -57,7 +57,7 @@ $$
 
 where $$\hat{R}(\alpha)$$ is a rotation matrix for angle $$\alpha$$, radii are $$r_0=n_0$$ and $$r_1=n_1$$, 
 while $$t_0=t$$ and $$t_1$$ are their polar angles. 
-The rotation matrix product results in simple $$({\rm cos}(\alpha),{\rm sin}(\alpha))$$ terms.
+The rotation matrix product results in simple $$[{\rm cos}(\alpha),{\rm sin}(\alpha)]$$ terms.
 Pen-hole distance from the gear center is $$p*r_1$$, while the scaled parameter $$p$$ is in the range [0,1]. 
 The only remaining unknown is connection between two polar angles $$t$$ and $$t_1$$. 
 Since the circles are geared and do not slip, the paths along circumference are same $$r_0*t=r_1*t_1$$, or $$t_1=(n_0/n_1)*t$$. 
@@ -68,10 +68,10 @@ and the whole pattern has 8-fold rotational symmetry.
 
 
 Let us consider our gear-in-hoop-in-wheel problem $$(n_0:n_1;n_2:n_3)$$. 
-We have 3 pieces in total: The $$n_0$$ teeth outer wheel is stationary and contains a "hoop" with $$n_1$$ outside and $$n_2$$ inside teeth. And inside of the hoop we have $$n_3$$ teeth gear.
-The hypotrochoid equation (Eq.1) is valid for any point of $$n_1$$ rolling inside of $$n_0$$ and **also** for any point of $$n_3$$ rolling inside $$n_2$$. 
+We have 3 pieces in total: The $$n_0$$ teeth outer wheel is stationary and contains a hoop $$(n_1;n_2)$$ with $$n_1$$ outside and $$n_2$$ inside teeth. And in of the hoop we roll $$n_3$$ teeth gear.
+The crucial observation is that the hypotrochoid equation (Eq.1) is valid for any point of $$n_1$$ rolling inside of $$n_0$$ and **also** for any point of $$n_3$$ rolling inside $$n_2$$. 
 Thus (Eq.1) is iterated onto itself. 
-The 1st term in (Eq.1) is translation of the $$n_1$$ center and the 2nd term is rotation by $$t-t_1$$ around the center. 
+The first term in (Eq.1) is translation of the $$n_1$$ center and the 2nd term is rotation by $$t-t_1$$ around the center. 
 The rotation by $$t-t_1$$ has to be applied to all of $$(n_2:n_3)$$.
 Thus we arrive at the resulting parametric equation
 
@@ -99,6 +99,7 @@ The initial setup may not be perfectly symmetric and angle  $$\varphi_p$$ measur
 Connection between polar angles is obtained by observing path along circle circumference: 
 $$t_1=(n_0/n_1)*t$$ and $$t_3=(n_2/n_3)*t_2$$.
 What remains to be determined is the connection between polar angles $$t_1$$ and $$t_2$$ of the hoop element.
+A surprisingly hard task.
 Playing with circles inside of circles (or watch youtube examples) we notice that $$t_1$$ and $$t_2$$ are very similar, sometimes exactly the same, which leads us to the simplest approximation:
 
 
@@ -331,7 +332,7 @@ $$(n_0:n_1;n_2:n_3)$$.
 This is good for exploration as the frequencies directly control curve properties.
 We need to assume that numbers $$T_1$$, $$T_3$$ and $$T$$ don't have a common divisor (if they have we can just divide that out).
 Next we need number of rotational symmetries  $$n_{\rm symm}={\rm gcd}(T_1,T_3)$$ and a parameter $$n_h={\rm gcd}(T_1,T)$$.
-Simple rearrangement of the equations from Section 4 yield $$n_0=a*T_1/n_h$$, $$n_1=a*T/n_h$$, $$n_2=b*T_3/n_{\rm symm}$$ and $$n_3=b*T/n_{\rm symm}$$, where $$a$$ and $$b$$ are arbitrary positive integers. Well, we still need physically possible system so number of teeth should differ by at least 6 - 8. Also $$n_1$$ and $$n_2$$ should be sufficiently different to allow larger hoop offsets $$h$$. Small $$h$$ tend to be bland and look closer to ordinary spirograph. Maximal possible value for $$h$$ is such that $$n_1$$ and $$n_2$$ touch:  $$h_{\rm max}=1-n_2/n_1$$.
+Simple rearrangement of the equations from Section 4 yield $$n_0=a*T_1/n_h$$, $$n_1=a*T/n_h$$, $$n_2=b*T_3/n_{\rm symm}$$ and $$n_3=b*T_1/n_{\rm symm}$$, where $$a$$ and $$b$$ are arbitrary positive integers. Well, we still need physically possible system so number of teeth should differ by at least 6 - 8. Also $$n_1$$ and $$n_2$$ should be sufficiently different to allow larger hoop offsets $$h$$. Small $$h$$ tend to be bland and look closer to ordinary spirograph. Maximal possible value for $$h$$ is such that $$n_1$$ and $$n_2$$ touch:  $$h_{\rm max}=1-n_2/n_1$$.
 It seems that just increasing $$a$$ is sufficient: $$h$$ values of 0.4 - 0.6 look interesting enough.
 
 
@@ -352,9 +353,7 @@ Fig.8 shows our two examples. It also demonstrates that number of teeth need not
 The second order roulette produces truly wild curves. This is by far the most interesting extension of the ordinary spirograph. I prepared a slide-show of interesting curves on [youtube][my-youtube-gallery]. My method was to pick parameters from "more common" gears and hoops from simpler wild gears collections, generate couple of thousand curves and their properties and then automatically sub-select for lighter curves (smallish $$T$$ and/or not too big $$T_3/T$$ and/or higher symmetries). The shown curves should all be possible to draw with pen on paper with wild gears. I also tried to note when different cog combination produces the same frequencies since that will generate similar curve.
 
 
-
-ONLINE PLOTTER in JS. to be done
-
+I wrote a basic plotter in javascript: [here][roulette_plot]. The tool uses (Eq.2) and (Eq.3.2) and can visualize curves. It might not be super stable (just reload the page), but it can also invert frequencies (scroll down) - this is perhaps more interesting application.
 
 
 
@@ -439,3 +438,4 @@ hard to guess such offset parameters.
 [cut-the-knot]:      https://www.cut-the-knot.org/arithmetic/GcdLcmProperties.shtml
 [reddit-gargantua]:  https://www.reddit.com/r/spirograph/comments/lpcmqt/one_loop_gargantua_is_a_gentle_singularity/
 [wildgears]:         https://www.wildgears.com/
+[roulette_plot]:     https://glagolj.github.io/gg-blog/tools/roulette_plot.html
