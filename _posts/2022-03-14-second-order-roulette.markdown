@@ -11,41 +11,41 @@ THIS IS STILL A DRAFT.
 
 
 Spirograph is a fond toy for many people. 
-Though unless one starts to combine lines from different combinations the outcome is soon exhausted. 
-But in the last decade [Aaron Bleackley][wildgears] managed to invigorate things with new gear toys called wild gears.
-The new added twists produce even more [striking curves][kickstarter] on paper.
-The wild gears are produced with high precision and it is possible to use 3 elements in 
-a [gear-in-hoop-in-wheel combo][spirographicart] and it produces intriguing curves.
-This article presents full parametric solution of this system and its properties.
-I also solved extensions for weird shapes or higher orders.
-This produced a lot of material that I will slowly share it on this blog.
+But the result is soon exhausted, unless one starts to combine lines from different setups.
+In the last decade Aaron Bleackley managed to invigorate things with new geared toys called [wild gears][wildgears].
+The wild gears are produced with high precision and it is possible to use 3 elements in
+a [gear-in-hoop-in-wheel combo][kickstarter] that produces [intriguing shapes][spirographicart] on paper.
+This article presents a full parametric solution of the new curves and examines their properties.
+I also solved extensions for weird shapes and even higher orders, which 
+produced a lot of intriguing curves that I will slowly share on this blog.
 
 
 
-About naming. [Roulette][wolfram-roulette] is a general term for rolling a curve on top of another
-curve. [Hypocycloids][wiki-hypotrochoid] and epicycloids are specific terms used for circles only,
-and don't apply to triangles and ovals. It seems to me that
-"higher order roulette" is accurate name for shapes obtained from
-gear-in-hoop-in-wheel, especially as we can extend it to exteriors,
-mount more gears or use weird shapes. And it doesn't sound bad.
-Another term to discuss is "hoop". 
-Aaron Bleackley uses it exclusively for the shape with concentric inner and outer circle.
-But it is the offseted, non-concentric, version that is crucial in production of these new weird curves.
-I am not a native English speaker, but googling "hoop" brings all kind of images and I think that
- it is not too big of a stretch to call even offset version a hoop.
+About naming: [Roulette][wolfram-roulette] is a general term for
+rolling a curve on top of another
+curve. [Hypocycloids][wiki-hypotrochoid] and epicycloids are specific
+terms used for circles only, and don't apply to triangles and
+ovals. It seems to me that "higher order roulette" is an accurate name
+for shapes obtained with gear-in-hoop-in-wheel, especially as it
+covers mounting gears on outside instead of inside, or adding more
+gears, or weird shapes instead of circles. 
+And it doesn't sound bad.  
+Another term to discuss is "hoop". Aaron Bleackley uses it exclusively
+for the geared element with concentric inner and outer circle.  But it
+is the offseted, non-concentric, version that is crucial in production
+of these new weird curves.  I am not a native English speaker, but
+googling "hoop" brings all kind of images and I think that
+ it is not too big stretch to call even offset version a hoop.
 
 
-In TLDR case: I can at least offer to consider two simple sections "9
-Gallery of curves and online plotter" and "7 Simple numerical
-example". 
+In TLDR case: consider at least two short sections "7 Simple numerical example" and "9 Gallery of curves and online plotter". 
 
 
 ## 1 Parametric equation
 
-I arrived at parametric equation of the second order roulette by a circuitous route, 
-but I realized that it could be developed in much simpler way that I will present here.
-We first start with ordinary spirograph $$(n_0:n_1)$$ which contains  a smaller gear with $$n_1$$ teeth inside a bigger static wheel with $$n_0$$ teeth. The solution is the [hypotrochoid parametric curve][wiki-hypotrochoid]
-written here as a vector equation (c.f. [this][mathcurve-hypotrochoid])
+
+Lets start with ordinary spirograph $$(n_0:n_1)$$ which consists of a smaller gear with $$n_1$$ teeth rolling inside a bigger static wheel with $$n_0$$ teeth. The solution is the famous [hypotrochoid parametric curve][wiki-hypotrochoid]
+written here as a vector equation (compare with [complex parametrization][mathcurve-hypotrochoid])
 
 $$
 \begin{bmatrix} x \\ y \end{bmatrix} = 
@@ -57,11 +57,12 @@ $$
 
 where $$\hat{R}(\alpha)$$ is a rotation matrix for angle $$\alpha$$, radii are $$r_0=n_0$$ and $$r_1=n_1$$, 
 while $$t_0=t$$ and $$t_1$$ are their polar angles. 
-Pen-hole distance from the gear center is $$p*r_1$$, thus scaled parameter $$p$$ is in the range [0,1]. 
+The rotation matrix product results in simple $$({\rm cos}(\alpha),{\rm sin}(\alpha))$$ terms.
+Pen-hole distance from the gear center is $$p*r_1$$, while the scaled parameter $$p$$ is in the range [0,1]. 
 The only remaining unknown is connection between two polar angles $$t$$ and $$t_1$$. 
-The minus sign in the argument $$t-t_1$$ comes from the opposite rotation of the gears. 
 Since the circles are geared and do not slip, the paths along circumference are same $$r_0*t=r_1*t_1$$, or $$t_1=(n_0/n_1)*t$$. 
 Note that the angle $$t-t_1$$ is the total rotation angle of $$n_1$$ gear.
+The minus sign comes from the opposite rotation of the gears. 
 Properties of the resulting curve are given by the fundamental ratio, or frequency $$f_0=n_0/n_1$$. For an example if we consider $$(96:60)$$, the fraction reduces to $$f_0=8/5$$ and the curve has 8 lobes, the line is connecting every 5-th lobe, 
 and the whole pattern has 8-fold rotational symmetry.
 
@@ -348,7 +349,8 @@ Fig.8 shows our two examples. It also demonstrates that number of teeth need not
 ## 9 Gallery of curves and online plotter
 
 
-This second order roulette produces truly wild curves. This is by far the most interesting extension of the ordinary spirograph. I prepared a slide-show of interesting curves on [youtube][my-youtube-gallery]. My method was to pick parameters from "more common" cogs and hoops from simpler wild gears collections, generate couple of thousand curves and their properties and then automatically sub-select for lighter curves (smallish $$T$$ and/or not too big $$T_3/T$$ and/or higher symmetries). The shown curves should all be possible to draw with pen on paper with wild gears. I also tried to note when different cog combination produces similar frequencies as that will generate similar curve.
+The second order roulette produces truly wild curves. This is by far the most interesting extension of the ordinary spirograph. I prepared a slide-show of interesting curves on [youtube][my-youtube-gallery]. My method was to pick parameters from "more common" gears and hoops from simpler wild gears collections, generate couple of thousand curves and their properties and then automatically sub-select for lighter curves (smallish $$T$$ and/or not too big $$T_3/T$$ and/or higher symmetries). The shown curves should all be possible to draw with pen on paper with wild gears. I also tried to note when different cog combination produces the same frequencies since that will generate similar curve.
+
 
 
 ONLINE PLOTTER in JS. to be done
