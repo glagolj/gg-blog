@@ -331,6 +331,7 @@ One very useful recipe is how to start from given frequencies $$F=(T_1/T,T_3/T)$
 $$(n_0:n_1;n_2:n_3)$$.
 This is good for exploration as the frequencies directly control curve properties.
 We need to assume that numbers $$T_1$$, $$T_3$$ and $$T$$ don't have a common divisor (if they have we can just divide that out).
+Cogs should also fit into the outer cogs: $$T<T_1<T_3$$.
 Next we need number of rotational symmetries  $$n_{\rm symm}={\rm gcd}(T_1,T_3)$$ and a parameter $$n_h={\rm gcd}(T_1,T)$$.
 Simple rearrangement of the equations from Section 4 yield $$n_0=a*T_1/n_h$$, $$n_1=a*T/n_h$$, $$n_2=b*T_3/n_{\rm symm}$$ and $$n_3=b*T_1/n_{\rm symm}$$, where $$a$$ and $$b$$ are arbitrary positive integers. Well, we still need physically possible system so number of teeth should differ by at least 6 - 8. Also $$n_1$$ and $$n_2$$ should be sufficiently different to allow larger hoop offsets $$h$$. Small $$h$$ tend to be bland and look closer to ordinary spirograph. Maximal possible value for $$h$$ is such that $$n_1$$ and $$n_2$$ touch:  $$h_{\rm max}=1-n_2/n_1$$.
 It seems that just increasing $$a$$ is sufficient: $$h$$ values of 0.4 - 0.6 look interesting enough.

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
-    <title>JS test</title>
+    <meta charset="utf-8">
+    <title>Second order roulette: JS plotter</title>
   </head>
   <body>
     <div>
@@ -13,16 +13,16 @@
       <form name="params" action="" method="">
 	<table align=left>
 	  <tr>
-	    <td>n0=<input class="f" type ="number" name="p_n0"  size=3 value="96"></td>
-	    <td>&nbsp;n1=<input class="f" type ="number" name="p_n1"  size=3 value="80"></td>
-	    <td>&nbsp;n2=<input class="f" type ="number" name="p_n2"  size=3 value="40"></td>
-	    <td>&nbsp;n3=<input class="f" type ="number" name="p_n3"  size=3 value="32"></td>
+	    <td>n0=<input class="f" type ="number" name="p_n0"  size=3 value="140"></td>
+	    <td>&nbsp;n1=<input class="f" type ="number" name="p_n1"  size=3 value="128"></td>
+	    <td>&nbsp;n2=<input class="f" type ="number" name="p_n2"  size=3 value="54"></td>
+	    <td>&nbsp;n3=<input class="f" type ="number" name="p_n3"  size=3 value="45"></td>
 	    <td><p id="res_F">.</p></td>
 	  </tr>
 	  <tr>
 	    <td><input type="button" class="mybutton" value="update" onClick="sr_update_plot()"></td>
-	    <td>h=<input class="f" type ="number" name="p_h"  size=6 value="0.4"></td>
-	    <td>&nbsp;p=<input class="f" type ="number" name="p_p"  size=6 value="0.7"></td>
+	    <td>h=<input class="f" type ="number" name="p_h"  size=6 value="0.48"></td>
+	    <td>&nbsp;p=<input class="f" type ="number" name="p_p"  size=6 value="0.8"></td>
 	    <td>&nbsp;phi=<input class="f" type ="number" name="p_phi"  size=4 value="0"><sup>o</sup>&nbsp;</td>
 	    <td><p id="res_symm">.</p></td>
 	  </tr>
@@ -77,12 +77,12 @@
     <div>
       <form name="examples" action="" method="">
 	<table align=left>
-<tr><td><input type="button" class="ex1" value="(140:128;54:45)" onClick="srset(140,128,54,45,0.4832,0.8000)"></td></tr>
 <tr><td><input type="button" class="ex1" value="(144:126;56:24)" onClick="srset(144,126,56,24,0.4603,0.8000)"></td></tr>
 <tr><td><input type="button" class="ex1" value="(112:104;46:28)" onClick="srset(112,104,46,28,0.4299,0.7000)"></td></tr>
 <tr><td><input type="button" class="ex1" value="(135:126;56:45)" onClick="srset(135,126,56,45,0.4603,0.7900)"></td></tr>
 <tr><td><input type="button" class="ex1" value="(126:108;45:15)" onClick="srset(126,108,45,15,0.5146,0.7000)"></td></tr>
 <tr><td><input type="button" class="ex1" value="(120:96;40:26)" onClick="srset(120,96,40,26,0.4573,0.7000)"></td></tr>
+<tr><td><input type="button" class="ex1" value="(140:128;54:45)" onClick="srset(140,128,54,45,0.4832,0.8000)"></td></tr>
 <tr><td><input type="button" class="ex1" value="(96:80;40:32)" onClick="srset(96,80,40,32,0.3751,0.7000)"></td></tr>
 	</table>
       </form>
