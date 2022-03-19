@@ -150,6 +150,13 @@ function sr_show_nfo()
 
   ctx.strokeStyle = "black";
   ctx.fillStyle = "black";
+  ctx.font = '12px sans-serif';
+  ctx.setTransform( 0, -1,1,0, 0,win );
+  ctx.fillText('glagolj.github.io/gg-blog/tools/roulette_plot.html',10,win-6);
+  
+
+
+
   ctx.setTransform( 1, 0,0,1, 0,0 );
   ctx.font = '24px sans-serif';
   var str = '('+n0.toString()+':'+n1.toString()+';'+n2.toString()+':'+n3.toString()+')';
@@ -189,8 +196,6 @@ function sr_update_plot()
   sr_show_nfo();
 
   ctx.lineWidth = 1 * linwid;
-  ctx.strokeStyle = 'black';
-  ctx.beginPath();
 
   var i;
   var tend = T * 2 * Math.PI;
@@ -202,41 +207,55 @@ function sr_update_plot()
   ymax = 0;
   var rsav = 0;
 
-  for( i=0 ; i<=npts ; i++ ){
-    var t  = i * tend / npts;
-    var t1 = m0 * t;
-    var t2 = t1 + Math.atan2(  h*Math.sin(t1), 1.0 - h*Math.cos(t1) );
-    var t3 = m1 * t2;
-    var a0 = t  - t1;
-    var a1 = a0 + t2 - t3 + phi;
+  var jcurv;
+  var ncurv = params2.show_f0.checked ? 2 : 1;
+  ctx.strokeStyle = 'black';
 
-    var x = (n0-n1)*Math.cos(t) + n1*h*Math.cos(a0) + (n2-n3)*Math.cos(a0+t2) + n3*p*Math.cos(a1);
-    var y = (n0-n1)*Math.sin(t) + n1*h*Math.sin(a0) + (n2-n3)*Math.sin(a0+t2) + n3*p*Math.sin(a1);
+  for( jcurv=0 ; jcurv < ncurv ; jcurv++ ){
+    if( jcurv > 0 ){
+      ctx.strokeStyle = 'yellow';
+    }
+    ctx.beginPath();
+    var rp = jcurv > 0 ? 0 : n3*p;
+
+    for( i=0 ; i<=npts ; i++ ){
+      var t  = i * tend / npts;
+      var t1 = m0 * t;
+      var t2 = t1 + Math.atan2(  h*Math.sin(t1), 1.0 - h*Math.cos(t1) );
+      var t3 = m1 * t2;
+      var a0 = t  - t1;
+      var a1 = a0 + t2 - t3 + phi;
+
+      var x = (n0-n1)*Math.cos(t) + n1*h*Math.cos(a0) + (n2-n3)*Math.cos(a0+t2) + rp*Math.cos(a1);
+      var y = (n0-n1)*Math.sin(t) + n1*h*Math.sin(a0) + (n2-n3)*Math.sin(a0+t2) + rp*Math.sin(a1);
     
-    if(hole != 0){
-      var xt = (n0-n1)*Math.cos(t) + n1*h*Math.cos(a0) + n2*Math.cos(a0+t2);
-      var yt = (n0-n1)*Math.sin(t) + n1*h*Math.sin(a0) + n2*Math.sin(a0+t2);
-      var ang = Math.atan2( yt-y, xt-x );
-      x += hole * Math.cos(ang);
-      y += hole * Math.sin(ang);
-    }
+      if(hole != 0){
+	var xt = (n0-n1)*Math.cos(t) + n1*h*Math.cos(a0) + n2*Math.cos(a0+t2);
+	var yt = (n0-n1)*Math.sin(t) + n1*h*Math.sin(a0) + n2*Math.sin(a0+t2);
+	var ang = Math.atan2( yt-y, xt-x );
+	x += hole * Math.cos(ang);
+	y += hole * Math.sin(ang);
+      }
 
-    var r = x*x + y*y;
-    if( r > rsav ){
-      rsav = r;
-      xmax = x;
-      ymax = y;
-    }
+      var r = x*x + y*y;
+      if( r > rsav ){
+	rsav = r;
+	xmax = x;
+	ymax = y;
+      }
 
-    if( i == 0 ){
-      ctx.moveTo(x,y);
+      if( i == 0 ){
+	ctx.moveTo(x,y);
+      }
+      else{
+	ctx.lineTo(x,y);
+      }
     }
-    else{
-      ctx.lineTo(x,y);
-    }
+    ctx.stroke();
+    ctx.closePath();
+
   }
-  ctx.stroke();
-  ctx.closePath();
+  ctx.strokeStyle = 'black';
 
   if( params2.show_symm.checked && nsymm > 1 ){
     ctx.strokeStyle = 'gray';
@@ -316,6 +335,17 @@ function sr_frqs_update(){
   params.p_n3.value = in_n3;
   
   sr_update_plot();
+}
+/********************************************************************************/
+/********************************************************************************/
+/********************************************************************************/
+function sr_save_image()
+{
+  /* https://stackoverflow.com/questions/11112321/how-to-save-canvas-as-png-image */
+  var str = '('+n0.toString()+':'+n1.toString()+';'+n2.toString()+':'+n3.toString()+')';
+  var dataURL = canvas.toDataURL("image/png");
+  var newTab = window.open('about:blank',str);
+  newTab.document.write("<img src='" + dataURL + "' alt='"+str+"'/>");
 }
 /********************************************************************************/
 /********************************************************************************/
