@@ -7,9 +7,6 @@ usemathjax: true
 ---
 
 
-THIS IS STILL A DRAFT.
-
-
 Spirograph is a fond toy for many people. 
 But the result is soon exhausted, unless one starts to combine lines from different setups.
 In the last decade Aaron Bleackley managed to invigorate things with new geared toys called [wild gears][wildgears].
