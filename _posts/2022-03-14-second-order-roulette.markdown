@@ -17,7 +17,7 @@ The wild gears are produced with high precision and it is possible to use 3 elem
 a [gear-in-hoop-in-wheel combo][kickstarter] that produces [intriguing shapes][spirographicart] on paper.
 This article presents a full parametric solution of the new curves and examines their properties.
 I also solved extensions for weird shapes and even higher orders, which 
-produced a lot of intriguing curves that I will slowly share on this blog.
+produced a lot of crazy curves that I will slowly share on this blog.
 
 
 As an introduction on how gear-in-hoop-in-wheel works I can offer 
@@ -145,14 +145,14 @@ And closer we are to the outer lobes, the less of a difference there is.
 
 For the plot examples shown here I add a small circle on top of (Eq.2) to mimic the effect of the pen motion within the hole. 
 The hole is about 2-3mm, or even larger, and there is small but appreciable motion of the pen inside it.
-This is popularly called "parallel lines" in the spirograph community as by inserting differently sized pegs one can obtain parallel lines on paper. I also rotate curve by 90 degrees as it is easier to spot reflection symmetries.
-In most examples here I use the 3rd, numerical, approximation as I am guessing that it is closest to the pen trace on the paper.
+This is popularly called "parallel lines" in the spirograph community as by inserting differently sized pegs one can obtain parallel lines on paper. I also rotate curve by $$90^\circ$$ as it is easier to spot reflection symmetries.
+In most examples I use the 3rd, numerical, $$t_2(t_1)$$ approximation as I am guessing that it is closest to the pen trace on the paper.
 
 
 ## 2 Comparison to wild gears on paper
 
 
-I prepared [a video with the gears in motion][my-youtube-gears] for two more accurate $$t_2(t_1)$$ solutions. Youtube description contains links to videos with pen on pape using wild gears. 
+I prepared [a video with the gears in motion][my-youtube-gears] for two more accurate $$t_2(t_1)$$ solutions. Youtube description contains links to videos with pen on paper using wild gears. 
 At this moment I am not sure which of the two solutions is really the
 closest. We would need more precise parameters $$h$$ and $$p$$ to try
 to settle the question.
