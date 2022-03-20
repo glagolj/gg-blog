@@ -14,15 +14,16 @@ Spirograph is a fond toy for many people.
 But the result is soon exhausted, unless one starts to combine lines from different setups.
 In the last decade Aaron Bleackley managed to invigorate things with new geared toys called [wild gears][wildgears].
 The wild gears are produced with high precision and it is possible to use 3 elements in
-a [gear-in-hoop-in-wheel combo][kickstarter] that produces [intriguing shapes][spirographicart] on paper.
+a [gear-in-hoop-in-wheel combo][kickstarter] that produces [intriguing shapes][spirographicart-old] on paper.
 This article presents a full parametric solution of the new curves and examines their properties.
 I also solved extensions for weird shapes and even higher orders, which 
 produced a lot of crazy curves that I will slowly share on this blog.
 
 
 As an introduction on how gear-in-hoop-in-wheel works I can offer 
-[my video][my-youtube-gears] with simulated cogs, or the same setup with
-[wild gears on paper][spirographicart-youtube].
+[my video][my-youtube-gears] with simulated cogs, 
+or [another video][spirographicart-youtube] by [spirographicart.com][spirographicart] 
+with the same setup using wild gears on paper.
 
 
 About naming: [Roulette][wolfram-roulette] is a general term for
@@ -30,9 +31,9 @@ rolling a curve on top of another
 curve. [Hypocycloids][wiki-hypotrochoid] and epicycloids are specific
 terms used for circles only, and don't apply to triangles and
 ovals. It seems to me that "higher order roulette" is an accurate name
-for shapes obtained with gear-in-hoop-in-wheel, especially as it
-covers mounting gears on outside instead of inside, or adding more
-gears, or weird shapes instead of circles. 
+for patterns obtained with gear-in-hoop-in-wheel, especially as it
+also covers mounting gears on the outside instead of the inside, or adding more
+gears, or triangular cogs instead of circular.
 And it doesn't sound bad.  
 Another term to discuss is "hoop". Aaron Bleackley uses it exclusively
 for the geared element with concentric inner and outer circle.  But it
@@ -72,7 +73,8 @@ and the whole pattern has 8-fold symmetry.
 
 
 Let us consider our gear-in-hoop-in-wheel problem $$(n_0:n_1;n_2:n_3)$$. 
-We have 3 pieces in total: The $$n_0$$ teeth outer wheel is stationary and contains a hoop $$(n_1;n_2)$$ with $$n_1$$ outside and $$n_2$$ inside teeth. And in of the hoop we roll $$n_3$$ teeth gear.
+We have 3 pieces in total: The $$n_0$$ teeth outer wheel is stationary and contains a hoop $$(n_1;n_2)$$ with $$n_1$$ outside and $$n_2$$ interior teeth. And inside of the hoop we roll $$n_3$$ teeth gear.
+For the visualization of the problem I can offer [video][my-youtube-gears] with simulated cogs.
 The crucial observation is that the hypotrochoid equation (Eq.1) is valid for any point of $$n_1$$ rolling inside of $$n_0$$ and **also** for any point of $$n_3$$ rolling inside $$n_2$$. 
 Thus (Eq.1) is iterated onto itself. 
 The first term in (Eq.1) is translation of the $$n_1$$ center and the 2nd term is rotation by $$t-t_1$$ around the center. 
@@ -94,7 +96,7 @@ $$
 
 
 
-As above we have circle radii $$r_0=n_0$$, $$r_1=n_1$$,  $$r_2=n_2$$, and $$r_3=n_3$$, while polar angles
+Radii are $$r_0=n_0$$, $$r_1=n_1$$,  $$r_2=n_2$$, and $$r_3=n_3$$, while polar angles
 are $$t_0=t$$, $$t_1$$, $$t_2$$, and $$t_3$$. 
 Parameter $$h$$ describes offset of circle $$n_2$$ inside of $$n_1$$. It is a scaled parameter and equal to distance between $$n_1$$ and $$n_2$$ centers divided by the radius $$r_1$$. 
 I use scaled parameter since for majority of Aaron Bleackley's hoops $$h$$ is between about 0.4 and 0.6 (but concentric hoops have $$h=0$$). 
@@ -112,7 +114,7 @@ $$ t_2=t_1 \tag{Eq.3.1} $$
 Surprisingly this is already a very good approximation. Bonus is that (Eq.2) then simplifies to 3 simple harmonics that are easier to analyse.
 
 
-We obtain a better approximation by noticing that with the pen in the hole of $$n_3$$ we are pressing the gear towards the circumference of the outermost static ring $$n_0$$. Thus we can ask for a function $$t_2(t_1)$$ that makes **the center** of the circle $$n_3$$ closest to the contact point between circles $$n_0$$ and $$n_1$$.  After some trigonometry one obtains following equation and its inverse:
+We obtain a better approximation by noticing that with the pen in the hole of $$n_3$$ we are pressing the gear towards the circumference of the outermost static ring $$n_0$$. Thus we can ask for a function $$t_2(t_1)$$ that makes **the center** of the circle $$n_3$$ closest to the contact point between circles $$n_0$$ and $$n_1$$.  After some trigonometry we obtain the following equation and its inverse:
 
 
 $$ 
@@ -126,7 +128,7 @@ t_1 = t_2 - {\rm arcsin}\bigl ( h * {\rm sin}(t_2) \bigr )
 $$
 
 
-Order of arguments of arctan are such that arctan(1,0)=0. The function arctan in (Eq.3.2) typically adds a small correction: $$20^\circ$$ -  $$40^\circ$$ for typical $$h$$ values (but it is $$0$$ for $$h=0$$ or $$t_1=k*\pi$$).
+Order of arguments of arctan are such that arctan(1,0)=0. The function arctan in (Eq.3.2)  adds a small correction $$20^\circ$$ -  $$40^\circ$$ for typical $$h$$ values (but it is $$0$$ for $$h=0$$ or $$t_1=k*\pi$$).
 
 
 A third approximation, that perhaps better matches a pen trace on paper, is when we ask for a function $$t_2(t_1)$$ that makes **pen-hole** in circle  $$n_3$$ closest to the contact point between circles $$n_0$$ and $$n_1$$. This is not possible to solve in a closed form, though Newton-Raphson algorithm quickly converges to double float precision but it has to be bracketed as it occasionally goes astray.
@@ -136,7 +138,7 @@ All 3 described functions $$t_2(t_1)$$ are very similar and produce very similar
 Actually in most cases it is not easy to even spot the difference: just compare 3 panels in Fig.1 
 (hint: the central parts are bit different).
 In other words there is difference between three $$t_2(t_1)$$ approximations, 
-but the difference is mostly along-the-track, and by less in orthogonal direction to the track.
+but the difference is mostly along-the-track, and much less in the orthogonal direction to the track.
 And closer we are to the outer lobes, the less of a difference there is.
 
 
@@ -145,8 +147,8 @@ And closer we are to the outer lobes, the less of a difference there is.
 
 For the plot examples shown here I add a small circle on top of (Eq.2) to mimic the effect of the pen motion within the hole. 
 The hole is about 2-3mm, or even larger, and there is small but appreciable motion of the pen inside it.
-This is popularly called "parallel lines" in the spirograph community as by inserting differently sized pegs one can obtain parallel lines on paper. I also rotate curve by $$90^\circ$$ as it is easier to spot reflection symmetries.
-In most examples I use the 3rd, numerical, $$t_2(t_1)$$ approximation as I am guessing that it is closest to the pen trace on the paper.
+This is popularly called ["parallel lines"][spirographicart-parallel] in the spirograph community as by inserting differently sized pegs one can obtain parallel lines on paper. I also rotate curve by $$90^\circ$$ as it is easier to spot reflection symmetries.
+In most examples I use the 3rd, numerical, $$t_2(t_1)$$ function as I am guessing that it is the closest to the pen trace on paper.
 
 
 ## 2 Comparison to wild gears on paper
@@ -179,7 +181,7 @@ as wild gears come in both versions.
 
 It is interesting to consider two special cases of the setup when the parametric equation simplifies. First case is when we have the middle "hoop" made of two concentric rings: $$h=0$$ (but $$p>0$$). From (Eq.3.2) we obtain $$t_2=t_1$$, and (Eq.2) reduces to only two simple harmonic terms $$x = A_1 * {\rm cos}(t) + B_1 * {\rm cos}(t-f_1 t)$$ and $$y$$ with sin() instead of cos().
 We use $$f_1=n_0n_2/(n_1n_3)$$ to denote ratio of numbers.
-The expression is functionally same as ordinary spirograph, or hypotrochoid parametric curve (Eq.1), except for different frequency $$f_1$$. This setup was named ["3) The Ring-Gear-Hoop system"][kickstarter] by Aaron Bleackley where he used nomenclature that "hoop" denotes only the concentric rings case $$h=0$$. Example of it is shown in Fig.4a. 
+The expression is functionally the same as ordinary spirograph, or the hypotrochoid parametric curve (Eq.1), except for different frequency $$f_1$$. This setup was named ["3) The Ring-Gear-Hoop system"][kickstarter] by Aaron Bleackley where he used nomenclature that "hoop" denotes only the concentric rings case $$h=0$$. Example of it is shown in Fig.4a. 
 It is a simple figure, as $$f_1=120*40/(96*26)$$ which simplyfies to $$f_1=25/13$$: we have 25 simple lobes, and line connects every 13-th lobe.
 
 
@@ -233,7 +235,7 @@ $$
 Implementing above equation requires usage of 64 bit integers as it can overflow.
 
 
-If $$T$$ is big, which is typically the case unless numbers of teeth are a bit commensurable, the result might be tearing the paper.
+If $$T$$ is large, which is typically the case unless teeth numbers are a bit commensurable, the result might be tearing the paper.
 For example (120:96;40:26) in Fig.4 we have $$f_0=5/4$$ and $$f_1=25/13$$, thus $$T =13*4$$ indicating heavier drawing. In contrast in Fig.1 we have $$F=(6/5,3/2)$$ and thus $$T = 2*5$$, indicating a light curve. 
 Number of rotations of $$(n_1;n_2)$$ hoop is 
 
@@ -282,17 +284,18 @@ n_{\rm symm} = {\rm gcd}( T_1, T_3 )
 $$
 
 
-Rotation by $$2\pi/n_{\rm symm}$$ will leave curve unchanged. Note that the curves always have $$n_{\rm symm}$$ rotational symmetry, regardless of the initial conditions.
-I didn't work out comparison to [Alyx Brett][alyx-brett] results, but I think they are the same.
+Rotation by $$2\pi/n_{\rm symm}$$ will leave curve unchanged. Note that the curves always have $$n_{\rm symm}$$ rotational symmetry, regardless of the initial condition $$\varphi_p$$.
+I didn't work out comparison to [Alyx Brett][alyx-brett] results on rotations, but I think they are the same.
 
 
-Plugging actual numbers for typical wild gear elements we mostly get low symmetry, or none at all ($$n_{\rm symm}=1$$).
-Here are two  nice curves with higher rotational symmetry:
+Plugging actual numbers for typical wild gear elements we mostly get low symmetry, or none at all $$n_{\rm symm}=1$$.
+The teeth numbers should be a bit commensurable to get symmetric outcome.
+Two  nice curves with higher rotational symmetry are shown in Fig.5.
 
 <a href="../../../../images/fig_5-140_128_054_045-144_126_056_024-large.png"><img src="../../../../images/fig_5-140_128_054_045-144_126_056_024-small.png" alt="Fig.5"></a>
 
 
-But there is also a fun category of curves that on the first glance look like they posses rotational symmetry, but not really at details level as $$n_{\rm symm}=1$$.
+But there is also a fun category of curves that on the first glance look like they posses rotational symmetry, but not really at details level as their $$n_{\rm symm}=1$$: Fig.6.
 
 
 <a href="../../../../images/fig_6-112_104_046_028-135_126_056_045-large.png"><img src="../../../../images/fig_6-112_104_046_028-135_126_056_045-small.png" alt="Fig.6"></a>
@@ -322,16 +325,17 @@ This also means that $$\varphi_p=0$$ and $$\varphi_p=\pi$$ can produce the same 
 
 Lets work out a simple numerical example by hand. Consider gear system
 (126:108;45:15) from Fig.7. Frequencies are $$f_0=126/108$$ and
-$$f_1=(126*45)/(108*15)$$. To reduce fractions we keep trying to 
-divide small factors out. Or, if this is made by wild gears there
+$$f_1=(126*45)/(108*15)$$. To reduce the fractions we keep trying to 
+divide out small factors. Or, if this is made by wild gears there
 are probably prime factors written on gears. For $$f_0$$ we divide out
 $$2*3^2$$ and obtain $$f_0=7/6$$. For $$f_1$$ we divide out $$2*3^4*5$$
 and get $$f_1=7/2$$.  Then two fractions $$7/6$$ and $$7/2$$ should be
 brought to the same denominator: $$7/2=21/6$$. Thus $$F=(7/6,21/6)$$
 and we read: $$T_1=7$$, $$T_3=21$$ (curve has 21 "lobes"), and $$T=6$$
 meaning that it is a light curve as we turn only 6 times inside the
-stationary ring. The rotation symmetry is least common denominator
-of numerators: common of $$7$$ and $$21$$ is $$n_{\rm symm}=7$$.
+stationary ring. The rotation symmetry is the least common denominator
+of fraction numerators: common of $$7$$ and $$21$$ is $$n_{\rm symm}=7$$, 
+so it is a 7-fold symmetric figure.
 
 
 ## 8 Inversion from frequencies
@@ -444,6 +448,8 @@ hard to guess such offset parameters.
 [my-youtube-gallery]:  https://youtu.be/GiVoWRRzIaU
 [my-youtube-zoo3]:   https://youtu.be/PTPbz9Gupew
 [spirographicart]:   https://spirographicart.com/2021/03/02/wheel-within-a-wheel-exploration-with-wild-gears/
+[spirographicart-old]:   https://spirographicart.com/2014/09/27/wild-gears-wheel-within-wheel/
+[spirographicart-parallel]:   https://spirographicart.com/2014/09/06/wild-gears-parallel-lines/
 [kickstarter]:       https://www.kickstarter.com/projects/465068187/wild-gears-20-reinventing-the-spirograph/posts/1445996
 [alyx-brett]:        https://www.alyx-brett.net/blog/2020-06-02-Spirograph-Maths-II
 [cut-the-knot]:      https://www.cut-the-knot.org/arithmetic/GcdLcmProperties.shtml
