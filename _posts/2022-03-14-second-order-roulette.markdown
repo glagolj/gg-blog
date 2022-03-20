@@ -20,6 +20,10 @@ I also solved extensions for weird shapes and even higher orders, which
 produced a lot of intriguing curves that I will slowly share on this blog.
 
 
+As an introduction on how gear-in-hoop-in-wheel works I can offer 
+[my video][my-youtube-gears] with simulated cogs, or the same setup with
+[wild gears on paper][spirographicart-youtube].
+
 
 About naming: [Roulette][wolfram-roulette] is a general term for
 rolling a curve on top of another
@@ -38,7 +42,7 @@ googling "hoop" brings all kind of images and I think that
  it is not too big stretch to call even offset version a hoop.
 
 
-In TLDR case: consider at least two short sections "7 Simple numerical example" and "9 Gallery of curves and online plotter". 
+In **TLDR** case: consider at least two short sections "7 Simple numerical example" and "9 Gallery of curves and online plotter". 
 
 
 ## 1 Parametric equation
@@ -64,7 +68,7 @@ Since the circles are geared and do not slip, the paths along circumference are 
 Note that the angle $$t-t_1$$ is the total rotation angle of $$n_1$$ gear.
 The minus sign comes from the opposite rotation of the gears. 
 Properties of the resulting curve are given by the fundamental ratio, or frequency $$f_0=n_0/n_1$$. For an example if we consider $$(96:60)$$, the fraction reduces to $$f_0=8/5$$ and the curve has 8 lobes, the line is connecting every 5-th lobe, 
-and the whole pattern has 8-fold rotational symmetry.
+and the whole pattern has 8-fold symmetry.
 
 
 Let us consider our gear-in-hoop-in-wheel problem $$(n_0:n_1;n_2:n_3)$$. 
@@ -248,7 +252,13 @@ T_3 = f_1 * T
 $$
 
 
-Note that $$F=(T_1/T,T_3/T)$$. Or: despite strange looking equations
+And a very usefull connection:
+
+
+$$F=(T_1/T,T_3/T) \tag{Eq.6.3} $$
+
+
+Or: despite strange looking equations
 we are just putting two fractions into a simplest form with a common
 denominator.
 In my plots I express $$f_1$$ with the common
@@ -300,9 +310,9 @@ $$
 \tag{Eq.8}
 $$
 
-The next result I didn't formally prove: the set of pitch values $$\varphi_p$$ from Eq.8 produces only two distinct curves, one for even and one for odd integers $$k$$. Reflection axis itself may be rotated though, but the curves are the same.
+The next result I didn't formally prove: the set of pitch values $$\varphi_p$$ from (Eq.8) produces only two distinct curves, one for even and one for odd integers $$k$$. Reflection axis itself may be rotated though, but the curves are the same.
 This also means that $$\varphi_p=0$$ and $$\varphi_p=\pi$$ can produce the same curve, depending on whether $$T_1/n_{\rm symm}$$ is even or odd.
-Eq.8 is also useful as it suggest $$k=1/2$$ as a choice for curves that have most slant and visual deviation from reflection symmetry. In Fig.7 we show $$k=0$$, $$1/2$$ and $$1$$. Fig.7b is  slanted and doesn't have reflection symmetry.
+(Eq.8) is also useful as it suggest $$k=1/2$$ as a choice for curves that have most slant and visual deviation from reflection symmetry. In Fig.7 we show $$k=0$$, $$1/2$$ and $$1$$. Fig.7b is  slanted and doesn't have reflection symmetry.
 
 
 <a href="../../../../images/fig_7-126_108_045_015-large.png"><img src="../../../../images/fig_7-126_108_045_015-small.png" alt="Fig.7"></a>
@@ -312,37 +322,37 @@ Eq.8 is also useful as it suggest $$k=1/2$$ as a choice for curves that have mos
 
 Lets work out a simple numerical example by hand. Consider gear system
 (126:108;45:15) from Fig.7. Frequencies are $$f_0=126/108$$ and
-$$f_1=(126*45)/(108*15)$$. To reduce fraction we can just keep trying
-to divide small factors out. Or, if this is made by wild gears there
+$$f_1=(126*45)/(108*15)$$. To reduce fractions we keep trying to 
+divide small factors out. Or, if this is made by wild gears there
 are probably prime factors written on gears. For $$f_0$$ we divide out
-$$2*3^2$$ and get $$f_0=7/6$$. For $$f_1$$ we divide out $$2*3^4*5$$
+$$2*3^2$$ and obtain $$f_0=7/6$$. For $$f_1$$ we divide out $$2*3^4*5$$
 and get $$f_1=7/2$$.  Then two fractions $$7/6$$ and $$7/2$$ should be
 brought to the same denominator: $$7/2=21/6$$. Thus $$F=(7/6,21/6)$$
 and we read: $$T_1=7$$, $$T_3=21$$ (curve has 21 "lobes"), and $$T=6$$
 meaning that it is a light curve as we turn only 6 times inside the
-stationary ring. The rotational symmetry is least common denominator
+stationary ring. The rotation symmetry is least common denominator
 of numerators: common of $$7$$ and $$21$$ is $$n_{\rm symm}=7$$.
 
 
 ## 8 Inversion from frequencies
 
 
-One very useful recipe is how to start from given frequencies $$F=(T_1/T,T_3/T)$$ and find teeth numbers for all 3 elements
+One very useful method is to start from given frequencies $$F=(T_1/T,T_3/T)$$ and then find teeth numbers for all 3 elements
 $$(n_0:n_1;n_2:n_3)$$.
-This is good for exploration as the frequencies directly control curve properties.
+It is a better approach for exploration as the frequencies directly control curve properties.
 We need to assume that numbers $$T_1$$, $$T_3$$ and $$T$$ don't have a common divisor (if they have we can just divide that out).
 Cogs should also fit into the outer cogs: $$T<T_1<T_3$$.
-Next we need number of rotational symmetries  $$n_{\rm symm}={\rm gcd}(T_1,T_3)$$ and a parameter $$n_h={\rm gcd}(T_1,T)$$.
-Simple rearrangement of the equations from Section 4 yield $$n_0=a*T_1/n_h$$, $$n_1=a*T/n_h$$, $$n_2=b*T_3/n_{\rm symm}$$ and $$n_3=b*T_1/n_{\rm symm}$$, where $$a$$ and $$b$$ are arbitrary positive integers. Well, we still need physically possible system so number of teeth should differ by at least 6 - 8. Also $$n_1$$ and $$n_2$$ should be sufficiently different to allow larger hoop offsets $$h$$. Small $$h$$ tend to be bland and look closer to ordinary spirograph. Maximal possible value for $$h$$ is such that $$n_1$$ and $$n_2$$ touch:  $$h_{\rm max}=1-n_2/n_1$$.
-It seems that just increasing $$a$$ is sufficient: $$h$$ values of 0.4 - 0.6 look interesting enough.
+Next we need number of rotation symmetries  $$n_{\rm symm}={\rm gcd}(T_1,T_3)$$ and a parameter $$n_h={\rm gcd}(T_1,T)$$.
+Simple rearrangement of the equations from Section 4 yields $$n_0=a*T_1/n_h$$, $$n_1=a*T/n_h$$, $$n_2=b*T_3/n_{\rm symm}$$ and $$n_3=b*T_1/n_{\rm symm}$$, where $$a$$ and $$b$$ are arbitrary positive integers. Well, we still need physically possible system so number of teeth should differ by at least 6 - 8. Also $$n_1$$ and $$n_2$$ should be sufficiently different to allow larger hoop offsets $$h$$. Small $$h$$ tend to be look bland. Maximal possible value for $$h$$ is such that $$n_1$$ and $$n_2$$ touch:  $$h_{\rm max}=1-n_2/n_1$$.
+But just increasing $$a$$ is sufficient: $$h$$ values of 0.4 - 0.6 look interesting enough.
 
 
 
-Example 1: Frequencies $$(16/14,24/14)$$ are not reduced, as we can divide further all 3 numbers with 2. Thus starting point can be $$F=(8/7,12/7)$$, or $$T_1=8$$, $$T_3=12$$ and $$T=7$$. Then number of rotational symmetries is $$n_{\rm symm}={\rm gcd}(8,12)=4$$. This will be a light curve ($$T=7$$) with 4-fold rotational symmetry. It will have $$T_3=12$$ lobes. Parameter $$n_h={\rm gcd}(8,7)=1$$. Thus cog system we need is $$n_0=8a$$, $$n_1=7a$$, $$n_2=3b$$ and $$n_3=2b$$. Some minimal numbers so that wheels differ by at least 7 teeth are $$b=8$$ and $$a=7$$ or (56:49;24:16).
+Example 1: Frequencies $$(16/14,24/14)$$ are not reduced, as we can divide further all 3 numbers with 2. Thus starting point can be $$F=(8/7,12/7)$$, or $$T_1=8$$, $$T_3=12$$ and $$T=7$$. Then number of rotation symmetries is $$n_{\rm symm}={\rm gcd}(8,12)=4$$. This will be a light curve ($$T=7$$) with 4-fold symmetry. It will have $$T_3=12$$ lobes. Parameter $$n_h={\rm gcd}(8,7)=1$$. Out cog system is $$n_0=8a$$, $$n_1=7a$$, $$n_2=3b$$ and $$n_3=2b$$. Some minimal numbers so that wheels differ by at least 7 teeth are $$b=8$$ and $$a=7$$ or (56:49;24:16).
 
 
-Example 2: Previous example looks interesting. Lets try something similar: $$F=(8/5,12/5)$$. Again:  $$n_{\rm symm}=4$$ and $$n_h=1$$, and this is even lighter curve ($$T=5$$). Thus cog system is $$(8a:5a;3b:2b)$$. Try $$b=8$$ and $$a=9$$ and we get (72:45;24:16).
-Fig.8 shows our two examples. It also demonstrates that number of teeth need not be very large.
+Example 2: Lets try something similar: $$F=(8/5,12/5)$$. Again:  $$n_{\rm symm}=4$$ and $$n_h=1$$, and this is even lighter curve ($$T=5$$). The cog system is $$(8a:5a;3b:2b)$$. Try $$b=8$$ and $$a=9$$ and we get (72:45;24:16).
+Fig.8 shows our two examples. It also demonstrates that number of teeth need not be very large. Since $$a$$ and $$b$$ are arbitrary there are many possible ways to archive any pair of F-ratios.
 
 
 <a href="../../../../images/fig_8-056_049_024_016-072_045_024_016-large.png"><img src="../../../../images/fig_8-056_049_024_016-072_045_024_016-small.png" alt="Fig.8"></a>
@@ -351,10 +361,10 @@ Fig.8 shows our two examples. It also demonstrates that number of teeth need not
 ## 9 Gallery of curves and online plotter
 
 
-The second order roulette produces truly wild curves. This is by far the most interesting extension of the ordinary spirograph. I prepared a slide-show of interesting curves on [youtube][my-youtube-gallery]. My method was to pick parameters from "more common" gears and hoops from simpler wild gears collections, generate couple of thousand curves and their properties and then automatically sub-select for lighter curves (smallish $$T$$ and/or not too big $$T_3/T$$ and/or higher symmetries). The shown curves should all be possible to draw with pen on paper with wild gears. I also tried to note when different cog combination produces the same frequencies since that will generate similar curve.
+The second order roulette produces truly wild curves. This is by far the most interesting extension of the ordinary spirograph. I prepared a slide-show of interesting curves on [youtube][my-youtube-gallery]. My method was to pick parameters from "more common" gears and hoops from basic wild gears collections, generate couple of thousand curves and their properties and then automatically sub-select for lighter curves (smallish $$T$$ and/or not too big $$T_3/T$$ and/or higher symmetries). The shown curves should all be possible to draw with pen on paper with wild gears. I also tried to note when different cog combination produces the same frequencies since that will generate similar curve.
 
 
-I wrote a basic plotter in javascript: [here][roulette_plot]. The tool uses (Eq.2) and (Eq.3.2) and can visualize curves. It might not be super stable (just reload the page), but it can also invert frequencies (scroll down) - this is perhaps more interesting application.
+I also wrote a basic plotter in javascript: [here][roulette_plot]. The tool uses (Eq.2) and (Eq.3.2) and can visualize curves. It might not be super stable (just reload the page in different tab). The tool can also invert frequencies (scroll down) and this is perhaps more interesting application.
 
 
 
@@ -396,13 +406,13 @@ f_2 = \frac{n_0n_2n_4}{n_1n_3n_5}
 \tag{Eq.9.3}
 $$
 
-Task is again to bring fractions to a common denominator $$T$$. And again the number of rotation symmetries $$n_{\rm symm}$$ is gcd of resulting numerators. Here are two examples:
+Task is again to bring fractions to a common denominator $$T$$: $$F=(T_1/T,T_3/T,T_5/T)$$. And again the number of rotation symmetries $$n_{\rm symm}={\rm gcd}(T_1,T_3,T_5)$$. Here are two examples:
 
 
 <a href="../../../../images/fig_9-200_160_120_060_024_012-176_160_120_080_054_027-large.png"><img src="../../../../images/fig_9-200_160_120_060_024_012-176_160_120_080_054_027-small.png" alt="Fig.9"></a>
 
 
-Let us work out numbers for Fig.9a: from (200:160;120:60;24:12) we have $$f_0=200/160=5/4$$, $$f_1=200*120/(160*60)=5/2$$ and $$f_2=200*120*24/(160*60*12)=5$$. These 3 fractions we have to bring to the same denominator: $$F=(5/4,10/4,20/4)$$. We read $$T=4$$ and $$T_5=20$$, while symmetry $$n_{\rm symm}={\gcd}(5,10,20)=5$$, i.e. very light figure with 5-fold rotational symmetry.
+Let us work out numbers for Fig.9a: from (200:160;120:60;24:12) we have $$f_0=200/160=5/4$$, $$f_1=200*120/(160*60)=5/2$$ and $$f_2=200*120*24/(160*60*12)=5$$. These 3 fractions we have to bring to the same denominator: $$F=(5/4,10/4,20/4)$$. We read $$T=4$$ and $$T_5=20$$, while symmetry $$n_{\rm symm}={\gcd}(5,10,20)=5$$, i.e. very light figure with 5-fold symmetry.
 
 
 
@@ -440,3 +450,4 @@ hard to guess such offset parameters.
 [reddit-gargantua]:  https://www.reddit.com/r/spirograph/comments/lpcmqt/one_loop_gargantua_is_a_gentle_singularity/
 [wildgears]:         https://www.wildgears.com/
 [roulette_plot]:     https://glagolj.github.io/gg-blog/tools/roulette_plot.html
+[spirographicart-youtube]:   https://www.youtube.com/watch?v=esmT4AFU-jE
