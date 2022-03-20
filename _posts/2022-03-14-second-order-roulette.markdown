@@ -355,7 +355,7 @@ But just increasing $$a$$ is sufficient: $$h$$ values of 0.4 - 0.6 look interest
 Example 1: Frequencies $$(16/14,24/14)$$ are not reduced, as we can divide further all 3 numbers with 2. Thus starting point can be $$F=(8/7,12/7)$$, or $$T_1=8$$, $$T_3=12$$ and $$T=7$$. Then number of rotation symmetries is $$n_{\rm symm}={\rm gcd}(8,12)=4$$. This will be a light curve ($$T=7$$) with 4-fold symmetry. It will have $$T_3=12$$ lobes. Parameter $$n_h={\rm gcd}(8,7)=1$$. Out cog system is $$n_0=8a$$, $$n_1=7a$$, $$n_2=3b$$ and $$n_3=2b$$. Some minimal numbers so that wheels differ by at least 7 teeth are $$b=8$$ and $$a=7$$ or (56:49;24:16).
 
 
-Example 2: Lets try something similar: $$F=(8/5,12/5)$$. Again:  $$n_{\rm symm}=4$$ and $$n_h=1$$, and this is even lighter curve ($$T=5$$). The cog system is $$(8a:5a;3b:2b)$$. Try $$b=8$$ and $$a=9$$ and we get (72:45;24:16).
+Example 2: Lets try something similar $$F=(8/5,12/5)$$. Again:  $$n_{\rm symm}=4$$ and $$n_h=1$$, and this is even a lighter curve ($$T=5$$). The cog system is $$(8a:5a;3b:2b)$$. Try $$b=8$$ and $$a=9$$ and we get (72:45;24:16).
 Fig.8 shows our two examples. It also demonstrates that number of teeth need not be very large. Since $$a$$ and $$b$$ are arbitrary there are many possible ways to archive any pair of F-ratios.
 
 
@@ -365,10 +365,10 @@ Fig.8 shows our two examples. It also demonstrates that number of teeth need not
 ## 9 Gallery of curves and online plotter
 
 
-The second order roulette produces truly wild curves. This is by far the most interesting extension of the ordinary spirograph. I prepared a slide-show of interesting curves on [youtube][my-youtube-gallery]. My method was to pick parameters from "more common" gears and hoops from basic wild gears collections, generate couple of thousand curves and their properties and then automatically sub-select for lighter curves (smallish $$T$$ and/or not too big $$T_3/T$$ and/or higher symmetries). The shown curves should all be possible to draw with pen on paper with wild gears. I also tried to note when different cog combination produces the same frequencies since that will generate similar curve.
+The second order roulette produces truly wild curves. This is by far the most interesting extension of the ordinary spirograph. I prepared a slide-show of interesting curves on [youtube][my-youtube-gallery]. My method was to pick parameters from "more common" gears and hoops from basic wild gears collections, generate couple of thousand curves and their properties and then automatically sub-select for lighter curves (smallish $$T$$ and/or not too big $$T_3/T$$ and/or higher symmetries). The shown curves should all be possible to draw with pen on paper with wild gears. I also tried to note when different cog combination produces the same frequencies since that will generate a similar curve.
 
 
-I also wrote a basic plotter in javascript: [here][roulette_plot]. The tool uses (Eq.2) and (Eq.3.2) and can visualize curves. It might not be super stable (just reload the page in different tab). The tool can also invert frequencies (scroll down) and this is perhaps more interesting application.
+I also wrote a basic plotter in javascript: [here][roulette_plot]. The tool uses (Eq.2) and (Eq.3.2) and can visualize curves. It might not be super stable (just reload the page in different tab). The tool can also invert frequencies (scroll down) and this is probably more interesting application.
 
 
 
@@ -383,7 +383,7 @@ expressions one occasionally needs absolute value, but equations are
 still valid. It is also interesting to see weird shapes such as
 triangles or squares, rotating.  All those are second order roulettes.
 I will try to prepare some material in the future, as this is already
-very big article.
+a very big article.
 
 
 
@@ -410,13 +410,18 @@ f_2 = \frac{n_0n_2n_4}{n_1n_3n_5}
 \tag{Eq.9.3}
 $$
 
-Task is again to bring fractions to a common denominator $$T$$: $$F=(T_1/T,T_3/T,T_5/T)$$. And again the number of rotation symmetries $$n_{\rm symm}={\rm gcd}(T_1,T_3,T_5)$$. Here are two examples:
+
+The task is again to bring fractions to a common denominator $$T$$: $$F=(T_1/T,T_3/T,T_5/T)$$. 
+The number of rotations within static ring $$n_0$$ is $$T$$, while there are $$T_5$$ "lobes" in total.
+Though what counts as a "lobe" is even more stretched, basically most kinks count.
+And as above for the 2nd order, the number of rotation symmetries is $$n_{\rm symm}={\rm gcd}(T_1,T_3,T_5)$$. 
+Here are two examples:
 
 
 <a href="../../../../images/fig_9-200_160_120_060_024_012-176_160_120_080_054_027-large.png"><img src="../../../../images/fig_9-200_160_120_060_024_012-176_160_120_080_054_027-small.png" alt="Fig.9"></a>
 
 
-Let us work out numbers for Fig.9a: from (200:160;120:60;24:12) we have $$f_0=200/160=5/4$$, $$f_1=200*120/(160*60)=5/2$$ and $$f_2=200*120*24/(160*60*12)=5$$. These 3 fractions we have to bring to the same denominator: $$F=(5/4,10/4,20/4)$$. We read $$T=4$$ and $$T_5=20$$, while symmetry $$n_{\rm symm}={\gcd}(5,10,20)=5$$, i.e. very light figure with 5-fold symmetry.
+Let us work out numbers for Fig.9a: from (200:160;120:60;24:12) we have $$f_0=200/160=5/4$$, $$f_1=200*120/(160*60)=5/2$$ and $$f_2=200*120*24/(160*60*12)=5$$. The 3 fractions should be brought to same denominator: $$F=(5/4,10/4,20/4)$$. We read $$T=4$$ and $$T_5=20$$, while symmetry $$n_{\rm symm}={\gcd}(5,10,20)=5$$, i.e. very light figure with 5-fold symmetry.
 
 
 
