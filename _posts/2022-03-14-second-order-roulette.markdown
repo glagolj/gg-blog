@@ -147,7 +147,7 @@ And closer we are to the outer lobes, the less of a difference there is.
 
 For the plot examples shown here I add a small circle on top of (Eq.2) to mimic the effect of the pen motion within the hole. 
 The hole is about 2-3mm, or even larger, and there is small but appreciable motion of the pen inside it.
-This is popularly called ["parallel lines"][spirographicart-parallel] in the spirograph community as by inserting differently sized pegs one can obtain parallel lines on paper. I also rotate curve by $$90^\circ$$ as it is easier to spot reflection symmetries.
+This is popularly called ["parallel lines"][spirographicart-parallel] in the spirograph community as by inserting differently sized pegs one can obtain parallel lines on paper. I also rotate curves by $$90^\circ$$ as it is easier to spot reflection symmetries.
 In most examples I use the 3rd, numerical, $$t_2(t_1)$$ function as I am guessing that it is the closest to the pen trace on paper.
 
 
@@ -377,8 +377,8 @@ I also wrote a basic plotter in javascript: [here][roulette_plot]. The tool uses
 
 All equations so far are valid even for some negative $$n$$-numbers,
 or for inversion $$n_0<n_1<n_2<n_3$$. These are meaningful
-combinations that describe gear in hoop on fixed gear, or wheel
-rotating around hoop around fixed gear and such. In the above
+combinations that describe gear in hoop mounted on the outside of a fixed gear, or wheel
+rotating around hoop around fixed gear and [such][kickstarter]. In the above
 expressions one occasionally needs absolute value, but equations are
 still valid. It is also interesting to see weird shapes such as
 triangles or squares, rotating.  All those are second order roulettes.
