@@ -9,18 +9,18 @@ categories: roulette
 Lets further explore the weird world of the [2nd order roulette curves][my-article-1]. Or gear-in-hoop-in-wheel spirograph.
 
 
-My previous slideshow of curves was aimed to be easier to reproduce with wild gears.
+My previous slideshow of curves was aimed to be easier to reproduce with [wild gears][wild_gears_compact].
 I tried to limit the choice of cogs to basic wild gear sets.
-New [slideshow video][youtube-slideshow-2] expands the cogs and shows more of the crazy curves.
+New [slideshow video][youtube-slideshow-2] expands the cogs and shows more of the crazy curves, but it will probably be harder to reproduce on paper.
 
 
-But a more interesting approach is to make a grid of outcomes.  Since
-there are dozen or bit more available non-concentric hoops
+Another interesting approach is to make a grid of outcomes.  Since
+there are 10-20 available non-concentric hoops
 there is a point to just keep adding different gears n3 and wheels n0 to the
 same hoop (n1;n2). This makes a nice grid of (n0:n1;n2:n3) curves.
 
 
-The first on display is the hoop (72;36) the most basic wild gears set (click on the image for large version):
+The first on display is the hoop (72;36) from [the most basic][wild_gears_compact] wild gears set (click on the image for large version):
 
 
 <a href="../../../../images/a002-grid-072_036-8x5-large.png"><img src="../../../../images/a002-grid-072_036-8x5-small.png" alt="Fig.1 grid of outcomes for (72;36) hoop"></a>
