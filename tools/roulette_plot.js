@@ -1,3 +1,16 @@
+/* 
+Javascript plotter for Second order roulette or gear-in-hoop-in-wheel spirograph
+by glagolj
+
+https://glagolj.github.io/gg-blog/roulette/2022/03/14/second-order-roulette.html
+https://glagolj.github.io/gg-blog/tools/roulette_plot.html
+
+V1.00  2022/03/19      working version
+V1.01  2022/03/25      
+
+LICENCE: MIT or GNU open source
+
+ */
 /********************************************************************************/
 /********************************************************************************/
 /********************************************************************************/
