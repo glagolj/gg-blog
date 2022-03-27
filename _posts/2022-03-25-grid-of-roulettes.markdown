@@ -16,8 +16,8 @@ New [slideshow video][youtube-slideshow-2] expands the cogs and shows more of th
 
 Another interesting approach is to make a grid of outcomes.  Since
 there are 10-20 available non-concentric hoops
-there is a point to just keep adding different gears n3 and wheels n0 to the
-same hoop (n1;n2). This makes a nice grid of (n0:n1;n2:n3) curves.
+there is a point to just keep adding different gears n<sub>3</sub> and wheels n<sub>0</sub> to the
+same hoop (n<sub>1</sub>;n<sub>2</sub>). This makes a nice grid of (n<sub>0</sub>:n<sub>1</sub>;n<sub>2</sub>:n<sub>3</sub>) curves.
 
 
 The first on display is the hoop (72;36) from [the most basic][wild_gears_compact] wild gears set (click on the image for large version):
@@ -52,7 +52,7 @@ Or (105;40) hoop:
 
 
 The selection criteria I used to organize grids seems to prefer more symmetric shapes to be displayed in this way.
-There are always a lot of asymmetric curves (nsymm=1) when I search through parameters, but they don't end often on grids.
+There are always a lot of asymmetric curves (n<sub>symm</sub>=1) when I search through parameters, but they don't end often on grids.
 
 
 
