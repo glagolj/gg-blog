@@ -34,7 +34,7 @@ We can also calculate in the opposite direction:
 The two fractions F=(T<sub>1</sub>/T,T<sub>3</sub>/T) can be [inverted][my-article-1-section-8] to predict which teeth numbers (n<sub>0</sub>:n<sub>1</sub>;n<sub>2</sub>:n<sub>3</sub>) give the same curve.
 Lets use a simple example F=(10/8,15/8), which is a light 5-fold symmetric curve (5 is largest common factor of 10 and 15).
 Inversion gives us teeth numbers (5a:4a;3b:2b), which is **∞<sup>2</sup>** possibilities since a and b are arbitrary positive integers.
-I was still surprised to find that wild gears can be accomplish that in 12 different ways:
+I was still surprised to find that wild gears can accomplish that in 12 different ways:
 (75:60;24:16), (75:60;30:20), (100:80;54:36), (105:84;36:24), (110:88;30:20), (120:96;72:48), (135:108;45:30), (135:108;48:32), (135:108;63:42), (160:128;54:36), (160:128;96:64), and (200:160;81:54).
 The next figure shows 3 of those 12 different cog combinations (click on the image for larger version). While the curves are not exactly the same, as other parameters (such as hoop offset h or pen-hole distance p) influence amplitudes, it is clearly the very same type of pattern.
 
