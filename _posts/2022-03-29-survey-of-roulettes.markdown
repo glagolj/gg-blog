@@ -43,7 +43,7 @@ I decided to keep those higher symmetries in the plot, as it looks better than l
 The image is really striking, and more ordered than naively expecting.
 I did expect, for instance, that diagonal x=y resembles ordinary spirographs, as that is just doubling the frequency (i.e. T<sub>3</sub>=2T<sub>1</sub>).
 But there are other patterns as well.
-One strongest is for instance along the lone (x=2,y=1), (x=4,y=2), (6,3) and (8,4) shapes are also similar in a way: there are individual lobes sticking out of a disk pattern. 
+One strongest is for instance along the line (x=2,y=1), (x=4,y=2), (6,3) and (8,4) shapes are also similar in a way: there are individual lobes sticking out of a disk pattern. 
 This is also some beating of frequencies, as numbers can be summarized as 2T<sub>3</sub>=3T<sub>1</sub>.
 Patterns also separate in type. Lower-right has lobes sticking out, while the upper-left side is more disc or rose like.
 
