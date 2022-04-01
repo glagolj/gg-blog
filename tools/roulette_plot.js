@@ -7,6 +7,7 @@ https://glagolj.github.io/gg-blog/tools/roulette_plot.html
 
 V1.00  2022/03/19      working version
 V1.01  2022/03/25      
+V1.02  2022/04/01      improve frequency inversion
 
 LICENCE: MIT or GNU open source
 
@@ -319,6 +320,7 @@ function sr_frqs_update(){
   in_T3 /= c;
   in_T  /= c;
 
+  var  n1n2fac = 2.0;
 
   var ns = js_gcd( in_T1, in_T3 );
   var nh = js_gcd( in_T1, in_T  );
@@ -329,12 +331,19 @@ function sr_frqs_update(){
   var in_n2 = ( b * in_T3 ) / ns;
 
   var in_n0;
-  var in_n1 = in_n2 * 2;
+  var in_n1 = Math.round( in_n2 * n1n2fac );
   var amin  = Math.ceil( 8 * nh / (in_T1 - in_T ) ); /* at least 8 teeth difference! */
   var a     = Math.max( amin, 1, Math.ceil( nh * in_n1 / in_T ) );
   in_n1 = ( a * in_T  ) / nh;
   in_n0 = ( a * in_T1 ) / nh;
   
+  var b_new = Math.floor( in_n1 * ns / ( in_T3 * n1n2fac ) );
+  if( b_new > b ){
+    b     = b_new;
+    in_n3 = ( b * in_T1 ) / ns;
+    in_n2 = ( b * in_T3 ) / ns;
+  }
+
   /*
   document.getElementById('tmp_v0').innerHTML = a.toString();
   document.getElementById('tmp_v1').innerHTML = b.toString();
