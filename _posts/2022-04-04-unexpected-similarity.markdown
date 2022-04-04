@@ -45,7 +45,7 @@ Such similarity is there for all curves, though it may not be always too obvious
 For instance this is cut for T<sub>3</sub>=T<sub>1</sub>+2n<sub>symm</sub> and n<sub>symm</sub>=7:
 
 
-<a href="../../../../images/a005-s14_dt14-8x5-large.png"><img src="../../../../images/a005-s07_dt14-8x5-small.png" alt="Fig.2: T<sub>3</sub>=T<sub>1</sub>+2n<sub>symm</sub> and n<sub>symm</sub>=7."></a>
+<a href="../../../../images/a005-s07_dt14-8x5-large.png"><img src="../../../../images/a005-s07_dt14-8x5-small.png" alt="Fig.2: T<sub>3</sub>=T<sub>1</sub>+2n<sub>symm</sub> and n<sub>symm</sub>=7."></a>
 
 
 Panels in each row resemble each other, especially when contrasted in such a way.
