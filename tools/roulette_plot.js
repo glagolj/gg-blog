@@ -8,6 +8,7 @@ https://glagolj.github.io/gg-blog/tools/roulette_plot.html
 V1.00  2022/03/19      working version
 V1.01  2022/03/25      
 V1.02  2022/04/01      improve frequency inversion
+V1.10  2022/04/10      add url with parameters
 
 LICENCE: MIT or GNU open source
 
@@ -26,6 +27,7 @@ var n2=40;
 var n3=32;
 var h=0.4;
 var p=0.8;
+var phi_input=0;
 var phi=0;
 
 var win=600;
@@ -35,6 +37,7 @@ var T1=1;
 var T3=1;
 var T=1;
 var nsymm=1;
+var hole_input=3;
 var hole=0.01;
 
 var modulo_mm = 1.0/50.0 * 27.07;  /* =0.54140000 */
@@ -55,6 +58,83 @@ function canvas_resize()
 
   ctx.setTransform( 1,0,0,1,0,0 );
   ctx.setTransform( 0, -win/2.0/pltmax, -win/2.0/pltmax, 0, win/2.0, win/2.0 ); 
+}
+/********************************************************************************/
+function parse_url_with_params()
+{
+  var sparams =  window.location.search;  
+  if( !sparams ){
+    return;
+  }
+  var n0_in=0,n1_in=0,n2_in=0,n3_in=0;
+  var r;
+
+
+  r  = sparams.match( /[\?\&]n0=([^&#]*)/ );
+  if(r){
+    n0_in  = Math.round( Math.abs( +r[1]  ) );
+  }
+
+
+  r  = sparams.match( /[\?\&]n1=([^&#]*)/ );
+  if(r){
+    n1_in  = Math.round( Math.abs( +r[1]  ) );
+  }
+
+  r  = sparams.match( /[\?\&]n2=([^&#]*)/ );
+  if(r){
+    n2_in  = Math.round( Math.abs( +r[1]  ) );
+  }
+
+  r  = sparams.match( /[\?\&]n3=([^&#]*)/ );
+  if(r){
+    n3_in  = Math.round( Math.abs( +r[1]  ) );
+  }
+
+  if( n0_in!=0 && n1_in!=0 && n2_in!=0 && n3_in!=0 ){
+    params.p_n0.value = n0_in;
+    params.p_n1.value = n1_in;
+    params.p_n2.value = n2_in;
+    params.p_n3.value = n3_in;
+  }
+
+
+  r  = sparams.match( /[\?\&]h=([^&#]*)/ );
+  if(r){
+    params.p_h.value = +r[1] ;
+  }
+
+  r  = sparams.match( /[\?\&]p=([^&#]*)/ );
+  if(r){
+    params.p_p.value = +r[1] ;
+  }
+
+  r  = sparams.match( /[\?\&]phi=([^&#]*)/ );
+  if(r){
+    params.p_phi.value = +r[1] ;
+  }
+
+  r  = sparams.match( /[\?\&]hole=([^&#]*)/ );
+  if(r){
+    params2.p_hole.value = +r[1] ;
+  }
+
+}
+/********************************************************************************/
+function print_url_with_params()
+{
+  var url      = window.location.href;     // Returns full URL (https://example.com/path/example.html)
+  url = url.replace( /\?.*/, '' );
+  url = url+'?'+
+    'n0='+n0.toString()+'&amp'+
+    'n1='+n1.toString()+'&amp'+
+    'n2='+n2.toString()+'&amp'+
+    'n3='+n3.toString()+'&amp'+
+    'h='+h.toString()+'&amp'+
+    'p='+p.toString()+'&amp'+
+    'phi='+phi_input.toString()+'&amp'+
+    'hole='+hole_input.toString();
+  document.getElementById('url_load_params').innerHTML = url;
 }
 /********************************************************************************/
 function get_params()
@@ -86,7 +166,8 @@ function get_params()
     params.p_h.value = h;
   }
 
-  hole = Math.abs( params2.p_hole.value / 2.0 / modulo_mm );
+  hole_input = params2.p_hole.value;
+  hole = Math.abs( hole_input / 2.0 / modulo_mm );
 
   p   = params.p_p.value;
   if( hole != 0 ){
@@ -97,7 +178,8 @@ function get_params()
     }
   }
 
-  phi = params.p_phi.value / 180.0 * Math.PI;
+  phi_input = params.p_phi.value;
+  phi = phi_input / 180.0 * Math.PI;
 
 
   var a = n1 / js_gcd(n0,n1);
@@ -110,6 +192,8 @@ function get_params()
   frqs_in.fin_T1.value = T1;
   frqs_in.fin_T3.value = T3;
   frqs_in.fin_T.value = T;
+
+  print_url_with_params();
 }
 /********************************************************************************/
 function sr_plot_circles()
@@ -386,5 +470,6 @@ function js_lcm(x, y) {
   return x * y / js_gcd(x, y);
 }
 /********************************************************************************/
+parse_url_with_params();
 sr_update_plot();
 
