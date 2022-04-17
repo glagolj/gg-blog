@@ -30,12 +30,15 @@ url: "glagolj.github.io" # the base hostname & protocol for your site, e.g. http
 #twitter_username: jekyllrb
 github_username:  glagolj
 
+
 # Build settings
 # http://webdocs.cs.ualberta.ca/~zichen2/blog/coding/setup/2019/02/17/how-to-add-mathjax-support-to-jekyll.html
 # markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+#  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -56,3 +59,7 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+paginate: 32
+#paginate_path: '/blogs/page:num/'
+

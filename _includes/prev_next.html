@@ -1,0 +1,14 @@
+<div class="footer-col-wrapper">
+  <div class="footer-col footer-col-1">
+  {% if include.prev_url %}
+    <a href="{{ include.prev_url | relative_url }}">&laquo; {{ include.prev_text }}</a>
+  {% endif %}
+</div>
+  <div class="footer-col footer-col-2">
+  </div>
+  <div class="footer-col footer-col-3" style="text-align: right;">
+  {% if include.next_url %}
+    <a href="{{ include.next_url | relative_url }}">{{ include.next_text }} &raquo;</a>
+  {% endif %}
+</div>
+</div>
