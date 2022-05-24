@@ -512,6 +512,9 @@ It is telling that out of all $$(m,l)$$ combinations in $$80\%$$ of cases at lea
 About the sign of $$C$$ I found: $$C>0$$ in $$52\%$$ of cases, $$C=0$$ in $$25\%$$, and $$C<0$$ in $$23\%$$ of examples.
 
 
+I did a survey of curves for different $$C$$ in one older article: [link][my-article-7-section-3].
+
+
 Parameters described here are not easy to use, and certainly it is not
 easy to find a match among acrylic Wild Gears to make pattern on paper.
 But on the other hand it is easy to find simple curves that have a "common theme".

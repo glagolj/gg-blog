@@ -440,6 +440,22 @@ hard to guess such offset parameters.
 
 
 
+## 12 Post-publication notes
+
+
+Here are some notes that came after the original publication.
+
+
+1. Javascript plotter is bit [upgraded][roulette_plot].
+
+
+2. Theory #2 article: [link][theory_2].
+
+
+3. u/HomegrownTomato made few drawings of the 3rd order roulette on [reddit][HomegrownTomato-3d-order]. My parametric equation matches well the drawings ([here][HomegrownTomato-3d-order-reply], or [example1][postimg-example1] or [example2][postimg-example2]).
+
+
+
 
 
 
@@ -459,3 +475,9 @@ hard to guess such offset parameters.
 [wildgears]:         https://www.wildgears.com/
 [roulette_plot]:     https://glagolj.github.io/gg-blog/tools/roulette_plot.html
 [spirographicart-youtube]:   https://www.youtube.com/watch?v=esmT4AFU-jE
+[theory_2]:          https://glagolj.github.io/gg-blog/roulette/2022/05/24/similarity_expanation.html
+[HomegrownTomato-3d-order]:          https://www.reddit.com/r/spirograph/comments/u0ugxi/a_few_butterflies_from_4gear_systems_adding_that/
+[HomegrownTomato-3d-order-reply]:    https://www.reddit.com/r/spirograph/comments/u0ugxi/comment/i4a8ikr/?utm_source=share&utm_medium=web2x&context=3
+[postimg-example1]:   https://postimg.cc/m1rgxvRc
+[postimg-example2]:   https://postimg.cc/gnKnmG6r
+
