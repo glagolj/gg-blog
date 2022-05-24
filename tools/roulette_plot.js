@@ -279,6 +279,20 @@ function sr_show_nfo()
     document.getElementById('tmp_v2').innerHTML = 'n2='+n2scl.toString()+'b';
     document.getElementById('tmp_v3').innerHTML = 'n3='+n3scl.toString()+'b';
   }
+  if(1){
+    var c_p = T1 - nsymm*(T1 - T);
+    var c_q = T3 - T1;
+    var n_c = js_gcd( c_p, c_q );
+    var l   = n_c / nsymm;
+    var m   = T1 - T;
+    c_p = c_p / n_c;
+    c_q = c_q / n_c;
+    document.getElementById('sim_C').innerHTML = ' C='+c_p.toString()+'/'+c_q.toString()+', &nbsp; ';
+    document.getElementById('sim_ns').innerHTML = ' n<sub>symm</sub>='+nsymm.toString()+', &nbsp; ';
+    document.getElementById('sim_nC').innerHTML = ' n<sub>C</sub>='+n_c.toString()+', &nbsp; ';
+    document.getElementById('sim_m').innerHTML = ' m='+m.toString()+', &nbsp; ';
+    document.getElementById('sim_l').innerHTML = ' l='+l.toString()+'. &nbsp; ';
+  }
 }
 /********************************************************************************/
 
